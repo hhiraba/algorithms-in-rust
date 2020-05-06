@@ -20,7 +20,10 @@ fn main() -> io::Result<()> {
     let numbers = buffer
         .split_whitespace()
         .map(|s| s.parse::<i32>()).collect::<Result<Vec<_>, _>>().unwrap();
-    println!("{:?}", numbers);
-    println!("gcd: {}", gcd(32, 5));
+    let s = numbers
+        .iter().sum::<i32>();
+    println!("inputs: {:?}", numbers);
+    println!("sum: {}", s);
+    println!("gcd: {}", gcd(1200, 246));
     return Ok(())
 }
